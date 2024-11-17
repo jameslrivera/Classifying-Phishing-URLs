@@ -1,2 +1,16 @@
 Notes on git:
-1. To update the main branch, 
+Updating main branch:
+- Checkout to the main branch then merge your updated branch to the main branch.
+
+Pulling from main:
+- 'Pull from' main, on your branch. Then sync changes / push.
+
+Checking out:
+- Click the branch you are on, then click the branch you want to checkout to, always save changes.
+
+Committing:
+- Make a change to a file, save the file, add the file to the staging area, pull any updates from your branch,
+committ with a message, then push or sync changes.
+
+-Commit and merge with main as frequently as possible
+-Let the the other person know what you are working on to limit conflicts.
