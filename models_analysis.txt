@@ -1,0 +1,10 @@
+Notes on the models analysis:
+
+1. Generate n models for each machine learning aproach 
+    * Logistic regression
+    * Naive bayes
+    * Simple perceptron
+    * Medium NN
+    * Deep NN
+2. Record accuracies to dataset
+3. Perform ANOVA on dataset containing accuracies

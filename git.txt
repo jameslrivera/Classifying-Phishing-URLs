@@ -1,0 +1,2 @@
+Notes on git:
+1. To update the main branch, 
