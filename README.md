@@ -58,7 +58,30 @@ The models utilize the following features:
   - Built and trained using `TensorFlow/Keras`.
   - Performance evaluated over multiple randomized train-test splits.
 
-### **3. Naive Bayes Classifier**
+ ### **3. Multi-Layer Perceptron Neural Network (MLP)**
+- Extends the SLP by introducing hidden layers:
+  - Input: Numerical features.
+  - Hidden Layers: Two fully connected layers with 10 neurons each and ReLU activation.
+  - Output: Binary classification using a sigmoid activation function.
+- **Implementation**:
+  - Built and trained using `TensorFlow/Keras`.
+  - Performance evaluated on multiple randomized train-test splits.
+- **Why MLP**:
+  - Captures non-linear relationships between features, making it more expressive than SLP.
+
+### **4. Deep Neural Network (DNN)**
+- Extends the MLP by significantly increasing the number of layers and neurons:
+  - Input: Numerical features.
+  - Hidden Layers: Ten fully connected layers with 30 neurons each and ReLU activation.
+  - Output: Binary classification using a sigmoid activation function.
+- **Implementation**:
+  - Built and trained using `TensorFlow/Keras`.
+  - Performance evaluated on multiple randomized train-test splits.
+- **Why DNN**:
+  - Allows the model to learn more complex patterns in the data but requires careful tuning to avoid overfitting.
+
+
+### **5. Naive Bayes Classifier**
 - Tokenizes URLs into words and uses `CountVectorizer` for vectorization.
 - **Implementation**:
   - Built using `sklearn.naive_bayes.MultinomialNB`.
@@ -70,12 +93,9 @@ The models utilize the following features:
 Performance metrics for each model are saved in the following CSV files:
 - `LogisticRegressionResults.csv`: Accuracies from 15 iterations of logistic regression.
 - `SLPResults.csv`: Accuracies from 15 iterations of the single-layer perceptron neural network.
+- `MLPResults.csv`: Accuracies from 15 iterations of the multi-layer perceptron neural network.
+- `DNNResults.csv`: Accuracies from 15 iterations of the deep neural network.
 - `NBResults.csv`: Accuracies from 15 iterations of the Naive Bayes classifier.
-
 ---
 
-## **Installation**
-### **1. Clone the Repository**
-```bash
-git clone https://github.com/your-repo-name/url-classification.git
-cd url-classification
+
