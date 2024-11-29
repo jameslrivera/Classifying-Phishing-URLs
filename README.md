@@ -8,7 +8,7 @@
 
 ## **Project Overview**
 
-This project focuses on building machine learning models to classify URLs as either **phishing** (malicious) or **safe**. Phishing URLs are designed to deceive users into providing sensitive information, such as passwords or credit card details. By leveraging various machine learning techniques, including **Logistic Regression**, **Single-Layer Perceptron Neural Networks**, and **Naive Bayes**, this project aims to identify effective methods for detecting phishing URLs.
+This project focuses on building machine learning models to classify URLs as either **phishing** (Bad) or **safe** (Good). Phishing URLs are designed to deceive users into providing sensitive information, such as passwords or credit card details. By leveraging various machine learning techniques, including **Logistic Regression**, **Single-Layer Perceptron Neural Networks**,**Multi Layer Preceptron neural Networks**, **Deep Neural Networks** and **Naive Bayes**, this project aims to identify effective methods for detecting phishing URLs.
 
 ---
 
@@ -17,6 +17,8 @@ This project focuses on building machine learning models to classify URLs as eit
 2. Compare the performance of:
    - Logistic Regression
    - Single-Layer Perceptron (SLP) Neural Network
+   - Multi-Layer Perceptron (MLP) Neural Network
+   - Deep Neural Network
    - Naive Bayes Classifier
 3. Evaluate model performance using metrics like **accuracy**, **F1-score**, and **ROC-AUC**.
 
