@@ -1,10 +1,11 @@
 Notes on the models analysis:
 
-1. Generate n models for each machine learning aproach 
+1. Generate 15 models for each machine learning aproach 
     * Logistic regression
     * Naive bayes
     * Simple perceptron
     * Medium NN
     * Deep NN
-2. Record accuracies to dataset
-3. Perform ANOVA on dataset containing accuracies
+2. Record the 15 accuracies, ROC, and F1 scores to the analysis file in the analysis folder.
+3. Perform ANOVA on dataset containing accuracies, ROC and F1, and possible Tukeys.
+
