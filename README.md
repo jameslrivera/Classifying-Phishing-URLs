@@ -1,101 +1,93 @@
-# URL Classification Project
+# **Classifying Phishing URLs**
 
-### **Authors**:  
-- James Rivera  
-- Agustin Lorenzo  
+This project is focused on identifying phishing websites by analyzing their URLs. Various machine learning models are employed to determine the effectiveness of different approaches in detecting phishing websites.
+
+by James Rivera and Agustin Lorenzo
+
+---
+
+## **Table of Contents**
+
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Models](#models)
+4. [Dataset](#dataset)
+5. [How to Run](#how-to-run)
+6. [Results](#results)
+7. [Future Work](#future-work)
 
 ---
 
 ## **Project Overview**
 
-This project focuses on building machine learning models to classify URLs as either **phishing** (Bad) or **safe** (Good). Phishing URLs are designed to deceive users into providing sensitive information, such as passwords or credit card details. By leveraging various machine learning techniques, including **Logistic Regression**, **Single-Layer Perceptron Neural Networks**,**Multi Layer Preceptron neural Networks**, **Deep Neural Networks** and **Naive Bayes**, this project aims to identify effective methods for detecting phishing URLs.
+Phishing websites aim to deceive users into revealing sensitive information such as login credentials or financial details. This project uses machine learning models to classify URLs as either **phishing** or **non-phishing**.
 
----
-
-## **Objectives**
-1. Develop models to classify URLs as "good" or "bad."
-2. Compare the performance of:
-   - Logistic Regression
-   - Single-Layer Perceptron (SLP) Neural Network
-   - Multi-Layer Perceptron (MLP) Neural Network
-   - Deep Neural Network
-   - Naive Bayes Classifier
-3. Evaluate model performance using metrics like **accuracy**, **F1-score**, and **ROC-AUC**.
-
----
-
-## **Dataset**
-- **Name**: `phishing_site_urls.csv`
-- **Description**: Contains labeled URLs classified as either "good" (safe) or "bad" (phishing).
-- **Columns**:
-  - `URL`: The website URL to be classified.
-  - `Label`: The classification label (`good` or `bad`).
+### **Key Objectives**:
+- Build and compare machine learning models.
+- Analyze the contribution of different features to classification accuracy.
+- Save results from each model for comparison.
 
 ---
 
 ## **Features**
-The models utilize the following features:
-1. **URL Length**: The length of the URL string.
-2. **Contains HTTPS**: Whether the URL includes the "https" protocol (binary: 1 if true, 0 otherwise).
-3. **Number of Special Characters**: The count of special characters in the URL (e.g., `!@#$%^&*()`).
-4. **Tokenized Text Features**: For the Naive Bayes model, tokenized words from URLs are vectorized using `CountVectorizer`.
+
+Each URL is analyzed to extract the following features:
+
+1. **HTTPS Presence**: Whether the URL uses HTTPS (`1` if present, `0` otherwise).
+2. **URL Length**: The total number of characters in the URL.
+3. **Special Character Length**: The number of special characters in the URL.
+4. **Number of Dots**: The count of `.` characters.
+5. **Number of Slashes**: The count of `/` characters.
+6. **Total Special Characters**: Sum of occurrences of specific special characters (`!@#$%^&*()-=`).
+7. **Domain Type**:
+   - Common domains like `.com`, `.org`, `.net`, `.me`.
+   - Other domains are categorized separately.
+8. **Group Features**:
+   - **Mean URL Length by Domain**: Average URL length for each domain type.
+   - **Deviation from Mean URL Length**: Difference between a URL's length and the average length for its domain.
 
 ---
 
 ## **Models**
+
+The following models are implemented to classify URLs:
+
 ### **1. Logistic Regression**
-- Uses numerical features (e.g., URL length, HTTPS presence) to classify URLs.
-- **Implementation**:
-  - Preprocessed features are standardized using `StandardScaler`.
-  - Model trained using `sklearn.linear_model.LogisticRegression`.
-- **Performance Metric**: Accuracy calculated over 15 iterations with randomized train-test splits.
+- Simple linear classifier.
+- Used as a baseline to compare against other models.
 
-### **2. Single-Layer Perceptron Neural Network**
-- A simple neural network with no hidden layers:
-  - Input: Numerical features.
-  - Output: Binary classification using a sigmoid activation function.
-- **Implementation**:
-  - Built and trained using `TensorFlow/Keras`.
-  - Performance evaluated over multiple randomized train-test splits.
+### **2. Naive Bayes**
+- Probabilistic model based on Bayes' theorem.
+- Assumes feature independence.
 
- ### **3. Multi-Layer Perceptron Neural Network (MLP)**
-- Extends the SLP by introducing hidden layers:
-  - Input: Numerical features.
-  - Hidden Layers: Two fully connected layers with 10 neurons each and ReLU activation.
-  - Output: Binary classification using a sigmoid activation function.
-- **Implementation**:
-  - Built and trained using `TensorFlow/Keras`.
-  - Performance evaluated on multiple randomized train-test splits.
-- **Why MLP**:
-  - Captures non-linear relationships between features, making it more expressive than SLP.
+### **3. Single-Layer Perceptron (SLP)**
+- Neural network with a single hidden layer.
+- Sigmoid activation for binary classification.
 
-### **4. Deep Neural Network (DNN)**
-- Extends the MLP by significantly increasing the number of layers and neurons:
-  - Input: Numerical features.
-  - Hidden Layers: Ten fully connected layers with 30 neurons each and ReLU activation.
-  - Output: Binary classification using a sigmoid activation function.
-- **Implementation**:
-  - Built and trained using `TensorFlow/Keras`.
-  - Performance evaluated on multiple randomized train-test splits.
-- **Why DNN**:
-  - Allows the model to learn more complex patterns in the data but requires careful tuning to avoid overfitting.
+### **4. Multi-Layer Perceptron (MLP)**
+- Neural network with 2 hidden layers, each containing 10 nodes.
+- Uses ReLU activation for hidden layers and sigmoid for output.
 
-
-### **5. Naive Bayes Classifier**
-- Tokenizes URLs into words and uses `CountVectorizer` for vectorization.
-- **Implementation**:
-  - Built using `sklearn.naive_bayes.MultinomialNB`.
-  - Accuracy recorded over 15 iterations.
+### **5. Deep Neural Network (DNN)**
+- Neural network with 10 hidden layers, each containing 30 nodes.
+- Designed for more complex patterns in the data.
 
 ---
 
-## **Results**
-Performance metrics for each model are saved in the following CSV files:
-- `LogisticRegressionResults.csv`: Accuracies from 15 iterations of logistic regression.
-- `SLPResults.csv`: Accuracies from 15 iterations of the single-layer perceptron neural network.
-- `MLPResults.csv`: Accuracies from 15 iterations of the multi-layer perceptron neural network.
-- `DNNResults.csv`: Accuracies from 15 iterations of the deep neural network.
-- `NBResults.csv`: Accuracies from 15 iterations of the Naive Bayes classifier.
+## **Dataset**
+
+The dataset contains URLs labeled as either:
+- **Good**: Non-phishing URLs.
+- **Bad**: Phishing URLs.
+
+The dataset is preprocessed to extract features for training and testing the models. It is stored as a CSV file: `phishing_site_urls.csv`.
+
 ---
 
+## **How to Run**
 
+### **Prerequisites**
+- Python 3.7–3.10
+- Libraries:
+  ```bash
+  pip install numpy pandas scikit-learn torch
