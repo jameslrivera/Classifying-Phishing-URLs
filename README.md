@@ -73,8 +73,40 @@ The following models are implemented to classify URLs:
 - Designed for more complex patterns in the data.
 
 ---
+## **Model Implementation Details**
 
+### **1. Logistic Regression**
+- A simple linear classifier that uses the `lbfgs` solver for optimization.
+- Serves as the baseline for comparison with more complex models.
+
+### **2. Naive Bayes**
+- A probabilistic classifier based on Bayes' theorem.
+- Assumes that all features are conditionally independent of each other.
+
+### **3. Single-Layer Perceptron (SLP)**
+- A neural network with:
+  - **1 Hidden Layer**: Contains a single dense layer with a sigmoid activation function.
+  - Optimized using the Adam optimizer and binary cross-entropy loss.
+- Designed for simple, linear decision boundaries.
+
+### **4. Multi-Layer Perceptron (MLP)**
+- A neural network with:
+  - **2 Hidden Layers**: Each containing 10 densely connected nodes with ReLU activation.
+  - **Output Layer**: 1 node with a sigmoid activation for binary classification.
+  - Optimized using the Adam optimizer with a learning rate of `0.01`.
+
+### **5. Deep Neural Network (DNN)**
+- A more complex neural network with:
+  - **10 Hidden Layers**: Each containing 30 densely connected nodes with ReLU activation.
+  - **Output Layer**: 1 node with a sigmoid activation for binary classification.
+  - Optimized using the Adam optimizer with a learning rate of `0.01`.
+- Designed for learning more complex patterns and interactions in the data.
+
+---
+
+Each model was implemented using either **Scikit-learn** (for logistic regression and Naive Bayes) or **PyTorch** (for SLP, MLP, and DNN). The neural networks are trained for 5 epochs with a batch size of 16.
 ## **Dataset**
+---
 
 The dataset contains URLs labeled as either:
 - **Good**: Non-phishing URLs.
