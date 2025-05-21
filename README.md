@@ -6,23 +6,11 @@ by James Rivera and Agustin Lorenzo
 
 ---
 
-## **Table of Contents**
-
-1. [Project Overview](#project-overview)
-2. [Features](#features)
-3. [Models](#models)
-4. [Dataset](#dataset)
-5. [How to Run](#how-to-run)
-6. [Results](#results)
-7. [Future Work](#future-work)
-
----
-
 ## **Project Overview**
 
 Phishing websites aim to deceive users into revealing sensitive information such as login credentials or financial details. This project uses machine learning models to classify URLs as either **phishing** or **non-phishing**.
 
-### **Key Objectives**:
+### **Goalss**:
 - Build and compare machine learning models.
 - Analyze the contribution of different features to classification accuracy.
 - Save results from each model for comparison.
@@ -71,36 +59,6 @@ The following models are implemented to classify URLs:
 ### **5. Deep Neural Network (DNN)**
 - Neural network with 10 hidden layers, each containing 30 nodes.
 - Designed for more complex patterns in the data.
-
----
-## **Model Implementation Details**
-
-### **1. Logistic Regression**
-- A simple linear classifier that uses the `lbfgs` solver for optimization.
-- Serves as the baseline for comparison with more complex models.
-
-### **2. Naive Bayes**
-- A probabilistic classifier based on Bayes' theorem.
-- Assumes that all features are conditionally independent of each other.
-
-### **3. Single-Layer Perceptron (SLP)**
-- A neural network with:
-  - **1 Hidden Layer**: Contains a single dense layer with a sigmoid activation function.
-  - Optimized using the Adam optimizer and binary cross-entropy loss.
-- Designed for simple, linear decision boundaries.
-
-### **4. Multi-Layer Perceptron (MLP)**
-- A neural network with:
-  - **2 Hidden Layers**: Each containing 10 densely connected nodes with ReLU activation.
-  - **Output Layer**: 1 node with a sigmoid activation for binary classification.
-  - Optimized using the Adam optimizer with a learning rate of `0.01`.
-
-### **5. Deep Neural Network (DNN)**
-- A more complex neural network with:
-  - **10 Hidden Layers**: Each containing 30 densely connected nodes with ReLU activation.
-  - **Output Layer**: 1 node with a sigmoid activation for binary classification.
-  - Optimized using the Adam optimizer with a learning rate of `0.01`.
-- Designed for learning more complex patterns and interactions in the data.
 
 ---
 
