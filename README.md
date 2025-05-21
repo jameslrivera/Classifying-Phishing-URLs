@@ -10,7 +10,7 @@ by James Rivera and Agustin Lorenzo
 
 Phishing websites aim to deceive users into revealing sensitive information such as login credentials or financial details. This project uses machine learning models to classify URLs as either **phishing** or **non-phishing**.
 
-### **Goalss**:
+### **Goals**:
 - Build and compare machine learning models.
 - Analyze the contribution of different features to classification accuracy.
 - Save results from each model for comparison.
